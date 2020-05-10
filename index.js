@@ -19,7 +19,7 @@ mongoose
 	});
 
 app.get('/', (req, res) => {
-	res.json({ message: 'Welcom to DevTube' });
+	res.json({ message: 'Welcome to DevTube' });
 });
 
 const port = process.env.PORT || 1212;
