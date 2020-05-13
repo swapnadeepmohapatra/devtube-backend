@@ -1,5 +1,5 @@
-import LikeD from '../models/LikeD';
-import DislikeD from '../models/DislikeD';
+const LikeD = require('../models/LikeD');
+const DislikeD = require('../models/DislikeD');
 
 exports.getLike = (req, res) => {
 	let likeID = {};
