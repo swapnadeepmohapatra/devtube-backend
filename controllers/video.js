@@ -8,7 +8,7 @@ exports.saveVideo = (req, res) => {
 			return res.status(400).json({ error: 'Video Upload Failed' });
 		}
 
-		return res.status(200).json(video);
+		return res.status(200).json({ video });
 	});
 };
 
