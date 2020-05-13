@@ -27,7 +27,7 @@ exports.incLike = (req, res) => {
 		likeData = { commentId: req.body.commentId, userId: req.body.userId };
 	}
 
-	const like = new Like(variable);
+	const like = new LikeD(likeData);
 
 	like.save((err, likeResult) => {
 		if (err) {
@@ -35,7 +35,9 @@ exports.incLike = (req, res) => {
 		}
 
 		DislikeD.findOneAndDelete(variable).exec((err, disLikeResult) => {
-			if (err) return res.status(400).json({ error: err });
+			if (err) {
+				return res.status(400).json({ error: err });
+			}
 			res.status(200).json({ likeResult });
 		});
 	});
@@ -49,7 +51,7 @@ exports.decLike = (req, res) => {
 		likeData = { commentId: req.body.commentId, userId: req.body.userId };
 	}
 
-	LikeD.findOneAndDelete(variable).exec((err, result) => {
+	LikeD.findOneAndDelete(likeData).exec((err, result) => {
 		if (err) {
 			return res.status(400).json({ error: err });
 		}
