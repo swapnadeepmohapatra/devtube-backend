@@ -49,7 +49,7 @@ exports.decLike = (req, res) => {
 		likeData = { commentId: req.body.commentId, userId: req.body.userId };
 	}
 
-	Like.findOneAndDelete(variable).exec((err, result) => {
+	LikeD.findOneAndDelete(variable).exec((err, result) => {
 		if (err) {
 			return res.status(400).json({ error: err });
 		}
