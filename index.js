@@ -10,6 +10,7 @@ const app = express();
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const likeRoutes = require('./routes/like');
+const dislikeRoutes = require('./routes/dislike');
 const videoRoutes = require('./routes/video');
 
 mongoose
@@ -33,6 +34,7 @@ app.use(cors());
 app.use('/api', authRoutes);
 app.use('/api', userRoutes);
 app.use('/api', likeRoutes);
+app.use('/api', dislikeRoutes);
 app.use('/api', videoRoutes);
 
 app.get('/', (req, res) => {

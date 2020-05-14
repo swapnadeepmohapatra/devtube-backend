@@ -1,7 +1,7 @@
 const LikeD = require('../models/LikeD');
 const DislikeD = require('../models/DislikeD');
 
-exports.getLike = (req, res) => {
+exports.getDislike = (req, res) => {
 	let dislikeId = {};
 
 	if (req.body.videoId) {
