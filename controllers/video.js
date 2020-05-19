@@ -6,7 +6,7 @@ exports.saveVideo = (req, res) => {
 
 	video.save((err, video) => {
 		if (err) {
-			return res.status(400).json({ error: 'Video Upload Failed' });
+			return res.status(400).json({ error: err });
 		}
 
 		return res.status(200).json({ video });

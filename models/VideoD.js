@@ -9,10 +9,11 @@ const VideoSchema = new Schema(
 		},
 		title: {
 			type: String,
-			maxlength: 50,
+			maxlength: 100,
 		},
 		description: {
 			type: String,
+			maxlength: 500,
 		},
 		privacy: {
 			type: Number,
