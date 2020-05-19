@@ -56,3 +56,16 @@ exports.getSubscriptionVideos = (req, res) => {
 			res.status(200).json({ videos });
 		});
 };
+
+exports.getRecommendedVideos = (req, res) => {
+	Video.find({ _id: { $ne: req.body.videoId } })
+		.limit(5)
+		.populate('writer')
+		.exec((err, videos) => {
+			if (err) {
+				return res.status(400).json({ error: err });
+			}
+
+			return res.status(200).json({ videos });
+		});
+};
