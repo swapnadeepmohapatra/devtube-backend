@@ -13,6 +13,7 @@ const likeRoutes = require('./routes/like');
 const dislikeRoutes = require('./routes/dislike');
 const videoRoutes = require('./routes/video');
 const subscribeRoutes = require('./routes/subscribe');
+const commentRoutes = require('./routes/comment');
 
 mongoose
 	.connect(process.env.DATABASE, {
@@ -38,6 +39,7 @@ app.use('/api', likeRoutes);
 app.use('/api', dislikeRoutes);
 app.use('/api', videoRoutes);
 app.use('/api', subscribeRoutes);
+app.use('/api', commentRoutes);
 
 app.get('/', (req, res) => {
 	res.json({ message: 'Welcome to DevTube' });
