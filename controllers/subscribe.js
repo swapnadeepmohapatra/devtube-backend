@@ -8,7 +8,7 @@ exports.subscribe = (req, res) => {
 			return res.status(400).json({ error: err });
 		}
 
-		return res.status(400).json({ subscriber });
+		return res.status(200).json({ subscriber });
 	});
 };
 
