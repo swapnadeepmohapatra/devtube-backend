@@ -3,8 +3,6 @@ const DislikeD = require("../models/DislikeD");
 
 exports.getLike = (req, res) => {
   let likeID = {};
-  console.log(req.body);
-
   if (req.body.videoId) {
     likeID = { videoId: req.body.videoId };
   } else {
@@ -22,7 +20,6 @@ exports.getLike = (req, res) => {
 
 exports.incLike = (req, res) => {
   let likeData = {};
-  console.log(req.body);
 
   if (req.body.videoId) {
     likeData = { videoId: req.body.videoId, userId: req.body.userId };
@@ -47,8 +44,6 @@ exports.incLike = (req, res) => {
 };
 
 exports.decLike = (req, res) => {
-  console.log(req.body);
-
   let likeData = {};
   if (req.body.videoId) {
     likeData = { videoId: req.body.videoId, userId: req.body.userId };
