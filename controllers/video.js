@@ -40,24 +40,24 @@ exports.getVideoById = (req, res) => {
 exports.getSubscriptionVideos = (req, res) => {
   Subscriber.find({
     userFrom: req.body.userFrom,
-    userTo: req.body.userTo,
   }).exec((err, subscribers) => {
     let subscribedChannels = [];
 
     subscribers.map((subscriber, i) => {
       subscribedChannels.push(subscriber.userTo);
+
+      Video.find({ writer: { $in: subscribedChannels } })
+        .populate("writer")
+        .sort({ _id: -1 })
+        .exec((err, videos) => {
+          if (err) {
+            return res.status(400).json({ error: err });
+          }
+
+          res.status(200).json({ videos });
+        });
     });
   });
-
-  Video.find({ write: { $in: subscribedChannels } })
-    .populate("writer")
-    .exec((err, videos) => {
-      if (err) {
-        return res.status(400).json({ error: err });
-      }
-
-      res.status(200).json({ videos });
-    });
 };
 
 exports.getRecommendedVideos = (req, res) => {
@@ -81,4 +81,17 @@ exports.getRecommendedVideos = (req, res) => {
         });
     }
   );
+};
+
+exports.getTrendingVideos = (req, res) => {
+  Video.find()
+    .sort({ views: -1 })
+    .populate("writer")
+    .exec((err, videos) => {
+      if (err) {
+        return res.status(400).json({ error: err });
+      }
+
+      return res.status(200).json({ videos });
+    });
 };
