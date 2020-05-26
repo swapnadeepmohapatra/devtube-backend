@@ -1,32 +1,32 @@
 {
-	"name": "devtube",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon index.js"
-	},
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"body-parser": "^1.19.0",
-		"cookie-parser": "^1.4.5",
-		"cors": "^2.8.5",
-		"crypto": "^1.0.1",
-		"dotenv": "^8.2.0",
-		"express": "^4.17.1",
-		"express-jwt": "^5.3.3",
-		"express-validator": "^6.4.1",
-		"jsonwebtoken": "^8.5.1",
-		"lodash": "^4.17.15",
-		"moment": "^2.25.3",
-		"mongoose": "^5.9.13",
-		"morgan": "^1.10.0",
-		"multer": "^1.4.2",
-		"nodemon": "^2.0.3",
-		"socket.io": "^2.3.0",
-		"uuid": "^8.0.0",
-		"video-thumbnail-generator": "^1.1.3"
-	}
+  "name": "devtube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.3",
+    "express-validator": "^6.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.25.3",
+    "mongoose": "^5.9.13",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.3",
+    "socket.io": "^2.3.0",
+    "uuid": "^8.0.0",
+    "video-thumbnail-generator": "^1.1.3"
+  }
 }
